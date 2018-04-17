@@ -43,9 +43,9 @@ module Paperclip
         parameters = parameters.flatten.compact.join(" ").strip.squeeze(" ")
 
         success = cjpeg(parameters, :source => "#{File.expand_path(src.path)}", :dest => File.expand_path(dst.path))
-      rescue Cocaine::ExitStatusError => e
+      rescue Terrapin::ExitStatusError => e
         raise Paperclip::Error, "There was an error processing the file for #{@basename}" if @whiny
-      rescue Cocaine::CommandNotFoundError => e
+      rescue Terrapin::CommandNotFoundError => e
         raise Paperclip::Errors::CommandNotFoundError.new("Could not run the `cjpeg` command. Please install MozJPEG.")
       end
 
