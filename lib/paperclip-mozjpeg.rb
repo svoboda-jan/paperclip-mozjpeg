@@ -5,6 +5,7 @@ module Paperclip
 
   # Handles JPEG and PNG compression.
   class Mozjpeg < Processor
+    PROCESSABLE_CONTENT_TYPES = ['image/jpeg', 'image/png']
 
     attr_accessor :whiny, :mozjpeg_options
 
@@ -30,6 +31,8 @@ module Paperclip
     # Performs the compression of the +file+. Returns the Tempfile
     # that contains the new image.
     def make
+      return @file unless PROCESSABLE_CONTENT_TYPES.include? Paperclip::ContentTypeDetector.new(@file.path).detect
+
       src = @file
       filename = [@basename, @format ? ".#{@format}" : ""].join
       dst = TempfileFactory.new.generate(filename)
