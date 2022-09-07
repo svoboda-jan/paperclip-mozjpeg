@@ -1,6 +1,6 @@
 # About
 
-This repository contains the ruby library which adds file processor to compress JPEG images uploaded using the [paperclip](https://github.com/thoughtbot/paperclip) gem.
+This repository contains the ruby library which adds file processor to compress JPEG images uploaded using the [paperclip](https://github.com/thoughtbot/paperclip) and [kt-paperclip](https://github.com/kreeti/kt-paperclip) gem.
 
 ## Installation
 
@@ -8,6 +8,8 @@ Add this line to your application's Gemfile:
 
 ```ruby
 gem 'paperclip-mozjpeg'
+# or 
+gem 'kt-paperclip-mozjpeg'
 
 # To use bundled binaries of MozJPEG 3.0 for Mac OS X, Linux and Windows add:
 gem 'mozjpeg'
@@ -20,6 +22,8 @@ And then execute:
 Or install it yourself as:
 
     $ gem install paperclip-mozjpeg
+    # or
+    $ gem install kt-paperclip-mozjpeg
     
 To install bundled binaries (must `require 'mozjpeg'` if not using bundler):
 
