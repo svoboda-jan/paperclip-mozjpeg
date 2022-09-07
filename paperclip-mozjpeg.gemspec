@@ -1,16 +1,13 @@
-# coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'paperclip-mozjpeg/version'
+require_relative "lib/paperclip-mozjpeg/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "paperclip-mozjpeg"
+  spec.name          = "#{ENV["GEM_NAME_PREFIX"]+"-" if ENV["GEM_NAME_PREFIX"]}paperclip-mozjpeg"
   spec.version       = PaperclipMozjpeg::VERSION
-  spec.authors       = ["Jan Svoboda"]
-  spec.email         = ["jan@mluv.cz"]
+  spec.authors       = [ "Jan Svoboda" ]
+  spec.email         = [ "jan@mluv.cz" ]
 
-  spec.summary       = %q{JPEG and PNG compression processor for paperclip using MozJPEG.}
-  spec.description   = %q{JPEG and PNG compression processor for paperclip using MozJPEG.}
+  spec.summary       = %Q[JPEG and PNG compression processor for paperclip using MozJPEG.]
+  spec.description   = %Q[JPEG and PNG compression processor for paperclip using MozJPEG.]
   spec.homepage      = "https://github.com/svoboda-jan/paperclip-mozjpeg"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
@@ -25,6 +22,6 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "minitest", "~> 5.4.2"
 
-  spec.add_dependency "paperclip"
+  spec.add_dependency "#{ENV["GEM_NAME_PREFIX"]+"-" if ENV["GEM_NAME_PREFIX"]}paperclip"
 
 end

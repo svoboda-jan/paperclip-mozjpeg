@@ -1,5 +1,5 @@
-require "paperclip-mozjpeg/version"
-require 'paperclip'
+require_relative "paperclip-mozjpeg/version"
+require "paperclip"
 
 module Paperclip
 
