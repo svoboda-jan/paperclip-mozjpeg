@@ -1,1 +1,1 @@
-require_relative "kt-paperclip-mozjpeg"
+require_relative "paperclip-mozjpeg"
